@@ -1,1 +1,242 @@
-<!DOCTYPE html> <html lang="es">   <head>     <meta charset="UTF-8" />     <meta name="viewport" content="width=device-width, initial-scale=1.0" />     <title>Contacto - LEIDA|CAKE</title>      <!-- Tus estilos originales (no se modifican) -->     <link rel="stylesheet" href="style.css" />      <!-- Estilos NUEVOS exclusivos de la página de contacto -->     <style>       .contacto {         max-width: 1000px;         margin: 40px auto;         padding: 0 20px;         display: grid;         grid-template-columns: 1fr 1fr;         gap: 40px;         align-items: start;       }        .contacto .titulo-seccion {         grid-column: 1 / -1;         text-align: center;         font-size: 2.2rem;         color: #5a3e2b;         margin-bottom: 20px;         font-family: 'Georgia', serif;       }        /* Información de contacto (izquierda) */       .info-contacto {         background: #fffaf5;         padding: 30px 25px;         border-radius: 12px;         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);       }        .info-contacto h3 {         font-size: 1.5rem;         color: #4a3723;         margin-bottom: 20px;         border-bottom: 2px solid #d49a6a;         padding-bottom: 8px;       }        .dato {         display: flex;         align-items: center;         gap: 12px;         margin-bottom: 18px;         color: #5a4a3a;         font-size: 1rem;       }        .dato .icono {         font-size: 1.3rem;         min-width: 28px;         text-align: center;       }        /* Formulario (derecha) */       .formulario-contacto {         background: #fffaf5;         padding: 30px 25px;         border-radius: 12px;         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);       }        .formulario-contacto h3 {         font-size: 1.5rem;         color: #4a3723;         margin-bottom: 20px;         border-bottom: 2px solid #d49a6a;         padding-bottom: 8px;       }        .form-grupo {         margin-bottom: 16px;       }        .form-grupo label {         display: block;         margin-bottom: 6px;         color: #4a3723;         font-weight: bold;       }        .form-grupo input,       .form-grupo textarea {         width: 100%;         padding: 12px 14px;         border: 1px solid #d2b49c;         border-radius: 8px;         font-size: 1rem;         background: #fffbf7;         transition: border 0.3s;         box-sizing: border-box;       }        .form-grupo input:focus,       .form-grupo textarea:focus {         outline: none;         border-color: #b87c4b;       }        .btn-enviar {         background: #d49a6a;         color: white;         border: none;         padding: 12px 28px;         border-radius: 25px;         font-size: 1rem;         cursor: pointer;         text-transform: uppercase;         letter-spacing: 0.5px;         transition: background 0.3s;         width: 100%;       }        .btn-enviar:hover {         background: #b87c4b;       }        .mensaje-exito {         color: #2e7d32;         background: #e8f5e9;         padding: 10px;         border-radius: 8px;         margin-bottom: 15px;         display: none;       }        /* Responsive */       @media (max-width: 700px) {         .contacto {           grid-template-columns: 1fr;           gap: 25px;         }         .contacto .titulo-seccion {           font-size: 1.8rem;         }       }     </style>   </head>    <body>     <!-- Menu de navegacion (EXACTAMENTE IGUAL a tu código original) -->     <header>       <nav class="menu">         <div class="container-menu">           <h1 class="titulo">LEIDA<span><span class="barra">|</span>CAKE</span></h1>           <button class="menu-toggle" id="mobile-menu">             <span class="bar">=</span>           </button>           <ul class="menu-list">             <li><a href="index.html">Inicio</a></li>             <li><a href="productos.html">Productos</a></li>             <li><a href="contacto.html">Contacto</a></li>           </ul>         </div>       </nav>     </header>      <!-- Sección de contacto -->     <main>       <section class="contacto">         <h2 class="titulo-seccion">Contáctanos</h2>          <!-- Bloque de información -->         <div class="info-contacto">           <h3>Visítanos o escríbenos</h3>           <div class="dato">             <span class="icono">📍</span>             <span>Calle Palmarito, sector Jaguey</span>           </div>           <div class="dato">             <span class="icono">📞</span>             <span>+58 41234 5678</span>           </div>           <div class="dato">             <span class="icono">✉️</span>             <span>hola@leidacake.cl</span>           </div>           <div class="dato">             <span class="icono">🕒</span>             <span>Lun a Vie: 9:00 - 19:00<br />Sáb: 10:00 - 14:00</span>           </div>         </div>          <!-- Formulario de contacto -->         <div class="formulario-contacto">           <h3>Envíanos un mensaje</h3>           <div id="mensaje-exito" class="mensaje-exito">             ¡Gracias! Tu mensaje ha sido enviado con éxito.           </div>           <form id="form-contacto">             <div class="form-grupo">               <label for="nombre">Nombre</label>               <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />             </div>             <div class="form-grupo">               <label for="email">Correo electrónico</label>               <input type="email" id="email" name="email" placeholder="tu@email.com" required />             </div>             <div class="form-grupo">               <label for="mensaje">Mensaje</label>               <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu pedido o consulta..." required></textarea>             </div>             <button type="submit" class="btn-enviar">Enviar mensaje</button>           </form>         </div>       </section>     </main>      <!-- Footer (EXACTAMENTE IGUAL) -->     <footer>       <p>&copy; 2024 LEIDA | CAKE. Todos los derechos reservados.</p>     </footer>      <!-- Script para el menú hamburguesa (no se modifica) -->     <script src="script.js"></script>      <!-- Pequeño script exclusivo para el formulario de contacto (simulación) -->     <script>       const formulario = document.getElementById('form-contacto');       const mensajeExito = document.getElementById('mensaje-exito');        formulario.addEventListener('submit', function(event) {         event.preventDefault(); // Evita el envío real         // Muestra el mensaje de éxito y limpia el formulario         mensajeExito.style.display = 'block';         formulario.reset();         // Opcional: ocultar el mensaje después de unos segundos         setTimeout(() => {           mensajeExito.style.display = 'none';         }, 4000);       });     </script>   </> </>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - LEIDA|CAKE</title>
+
+    <!-- Tus estilos originales (no se modifican) -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Estilos NUEVOS exclusivos de la página de contacto -->
+    <style>
+      .contacto {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .contacto .titulo-seccion {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 2.2rem;
+        color: #5a3e2b;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+      }
+
+      /* Información de contacto (izquierda) */
+      .info-contacto {
+        background: #fffaf5;
+        padding: 30px 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .info-contacto h3 {
+        font-size: 1.5rem;
+        color: #4a3723;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #d49a6a;
+        padding-bottom: 8px;
+      }
+
+      .dato {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        color: #5a4a3a;
+        font-size: 1rem;
+      }
+
+      .dato .icono {
+        font-size: 1.3rem;
+        min-width: 28px;
+        text-align: center;
+      }
+
+      /* Formulario (derecha) */
+      .formulario-contacto {
+        background: #fffaf5;
+        padding: 30px 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .formulario-contacto h3 {
+        font-size: 1.5rem;
+        color: #4a3723;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #d49a6a;
+        padding-bottom: 8px;
+      }
+
+      .form-grupo {
+        margin-bottom: 16px;
+      }
+
+      .form-grupo label {
+        display: block;
+        margin-bottom: 6px;
+        color: #4a3723;
+        font-weight: bold;
+      }
+
+      .form-grupo input,
+      .form-grupo textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d2b49c;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #fffbf7;
+        transition: border 0.3s;
+        box-sizing: border-box;
+      }
+
+      .form-grupo input:focus,
+      .form-grupo textarea:focus {
+        outline: none;
+        border-color: #b87c4b;
+      }
+
+      .btn-enviar {
+        background: #d49a6a;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: background 0.3s;
+        width: 100%;
+      }
+
+      .btn-enviar:hover {
+        background: #b87c4b;
+      }
+
+      .mensaje-exito {
+        color: #2e7d32;
+        background: #e8f5e9;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        display: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        .contacto {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .contacto .titulo-seccion {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Menu de navegacion (EXACTAMENTE IGUAL a tu código original) -->
+    <header>
+      <nav class="menu">
+        <div class="container-menu">
+          <h1 class="titulo">LEIDA<span><span class="barra">|</span>CAKE</span></h1>
+          <button class="menu-toggle" id="mobile-menu">
+            <span class="bar">=</span>
+          </button>
+          <ul class="menu-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sección de contacto -->
+    <main>
+      <section class="contacto">
+        <h2 class="titulo-seccion">Contáctanos</h2>
+
+        <!-- Bloque de información -->
+        <div class="info-contacto">
+          <h3>Visítanos o escríbenos</h3>
+          <div class="dato">
+            <span class="icono">📍</span>
+            <span>Calle Dulce 123, Barrio Pastelero, Ciudad Sabor</span>
+          </div>
+          <div class="dato">
+            <span class="icono">📞</span>
+            <span>+56 9 1234 5678</span>
+          </div>
+          <div class="dato">
+            <span class="icono">✉️</span>
+            <span>hola@leidacake.cl</span>
+          </div>
+          <div class="dato">
+            <span class="icono">🕒</span>
+            <span>Lun a Vie: 9:00 - 19:00<br />Sáb: 10:00 - 14:00</span>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="formulario-contacto">
+          <h3>Envíanos un mensaje</h3>
+          <div id="mensaje-exito" class="mensaje-exito">
+            ¡Gracias! Tu mensaje ha sido enviado con éxito.
+          </div>
+          <form id="form-contacto">
+            <div class="form-grupo">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-grupo">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-grupo">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu pedido o consulta..." required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (EXACTAMENTE IGUAL) -->
+    <footer>
+      <p>&copy; 2024 LEIDA | CAKE. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script para el menú hamburguesa (no se modifica) -->
+    <script src="script.js"></script>
+
+    <!-- Pequeño script exclusivo para el formulario de contacto (simulación) -->
+    <script>
+      const formulario = document.getElementById('form-contacto');
+      const mensajeExito = document.getElementById('mensaje-exito');
+
+      formulario.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío real
+        // Muestra el mensaje de éxito y limpia el formulario
+        mensajeExito.style.display = 'block';
+        formulario.reset();
+        // Opcional: ocultar el mensaje después de unos segundos
+        setTimeout(() => {
+          mensajeExito.style.display = 'none';
+        }, 4000);
+      });
+    </script>
+  </body>
+</html>
