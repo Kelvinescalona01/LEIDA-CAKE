@@ -5,105 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos - LEIDA|CAKE</title>
 
-    <!-- Tus estilos originales (no se modifican) -->
+    <!-- Tus estilos originales (NO SE MODIFICAN) -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Estilos NUEVOS exclusivos de la página de productos -->
+    <!-- Estilos NUEVOS exclusivos de la sección de productos -->
     <style>
-      /* Contenedor general de la sección de productos */
+      /* Aprovecho las variables definidas en style.css */
       .productos {
         max-width: 1200px;
-        margin: 40px auto;
+        margin: 100px auto 40px; /* margen superior para no tapar el header fijo */
         padding: 0 20px;
         text-align: center;
-        top:20px;
       }
 
       .productos .titulo-seccion {
         font-size: 2.2rem;
-        color: #5a3e2b; /* tono chocolate */
+        color: var(--accent);
         margin-bottom: 30px;
-        font-family: 'Georgia', serif;
+        font-family: "Poppins", sans-serif;
+        border-bottom: 2px solid var(--accent2);
+        display: inline-block;
+        padding-bottom: 6px;
       }
 
-      /* Grid adaptable de tarjetas */
+      /* Grid de tarjetas */
       .productos-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
-        margin-top: 20px;
+        margin-top: 30px;
       }
 
-      /* Tarjeta de producto */
       .producto-card {
-        background: #fffaf5; /* fondo crema claro */
+        background: #2a2828; /* un tono apenas más claro que el fondo principal */
+        border: 1px solid var(--secondary);
         border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       }
 
       .producto-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        border-color: var(--accent);
       }
 
       .producto-card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
-        background: #f3e1d2; /* color de respaldo si no hay imagen */
+        background: #3a3636;
       }
 
       .producto-info {
         padding: 20px 15px;
-        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        gap: 12px;
       }
 
       .producto-info h3 {
-        margin: 0 0 8px;
         font-size: 1.4rem;
-        color: #4a3723;
+        color: var(--secondary2);
+        margin: 0;
       }
 
       .producto-info p {
         font-size: 0.95rem;
-        color: #6b5b4f;
-        margin: 0 0 15px;
+        color: var(--secondary3);
         line-height: 1.4;
+        text-align: center;
       }
 
       .precio {
         font-weight: bold;
         font-size: 1.3rem;
-        color: #b5651d; /* dorado tostado */
-        margin-bottom: 15px;
+        color: var(--accent);
       }
 
       .btn-agregar {
-        background: #d49a6a;
-        color: white;
-        border: none;
-        padding: 10px 22px;
+        background: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        padding: 8px 24px;
         border-radius: 25px;
         font-size: 0.95rem;
+        font-weight: bold;
         cursor: pointer;
-        transition: background 0.3s;
+        transition: 0.3s;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
 
       .btn-agregar:hover {
-        background: #b87c4b;
+        background: var(--accent);
+        color: var(--primary);
       }
 
-      /* Ajustes para pantallas pequeñas */
       @media (max-width: 600px) {
         .productos .titulo-seccion {
           font-size: 1.8rem;
@@ -113,16 +113,14 @@
   </head>
 
   <body>
-    <!-- Menu de navegacion (EXACTAMENTE IGUAL a tu código original) -->
+    <!-- Menú de navegación (EXACTAMENTE IGUAL) -->
     <header>
       <nav class="menu">
         <div class="container-menu">
           <h1 class="titulo">LEIDA<span><span class="barra">|</span>CAKE</span></h1>
-          <!-- Boton para menu toggle -->
           <button class="menu-toggle" id="mobile-menu">
             <span class="bar">=</span>
           </button>
-          <!-- Lista de enlaces del menu -->
           <ul class="menu-list">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
@@ -132,11 +130,10 @@
       </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL: Sección de productos -->
+    <!-- Contenido principal: Productos -->
     <main>
       <section class="productos">
-        <h2 class="titulo-seccion">Nuestras Tortas Artesanales</h2>
-
+        <h2 class="titulo-seccion">Nuestras Tortas</h2>
         <div class="productos-grid">
           <!-- Producto 1 -->
           <div class="producto-card">
@@ -156,7 +153,7 @@
           <div class="producto-card">
             <img
               src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Torta Red Velvet"
+              alt="Red Velvet"
             />
             <div class="producto-info">
               <h3>Red Velvet</h3>
@@ -184,7 +181,7 @@
           <div class="producto-card">
             <img
               src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Torta de zanahoria"
+              alt="Carrot Cake"
             />
             <div class="producto-info">
               <h3>Carrot Cake</h3>
@@ -198,7 +195,7 @@
           <div class="producto-card">
             <img
               src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Torta de limón"
+              alt="Lemon Pie"
             />
             <div class="producto-info">
               <h3>Lemon Pie</h3>
@@ -212,7 +209,7 @@
           <div class="producto-card">
             <img
               src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Torta de maracuyá"
+              alt="Maracuyá Mousse"
             />
             <div class="producto-info">
               <h3>Maracuyá Mousse</h3>
@@ -225,12 +222,12 @@
       </section>
     </main>
 
-    <!-- Footer (EXACTAMENTE IGUAL) -->
+    <!-- Footer (exactamente igual) -->
     <footer>
       <p>&copy; 2024 LEIDA | CAKE. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Tu script original del menú (no se modifica) -->
+    <!-- Script del menú hamburguesa (no se toca) -->
     <script src="script.js"></script>
   </body>
 </html>
