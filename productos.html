@@ -1,40 +1,235 @@
-doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>menu practica</title>
+    <title>Productos - LEIDA|CAKE</title>
+
+    <!-- Tus estilos originales (no se modifican) -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Estilos NUEVOS exclusivos de la página de productos -->
+    <style>
+      /* Contenedor general de la sección de productos */
+      .productos {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .productos .titulo-seccion {
+        font-size: 2.2rem;
+        color: #5a3e2b; /* tono chocolate */
+        margin-bottom: 30px;
+        font-family: 'Georgia', serif;
+      }
+
+      /* Grid adaptable de tarjetas */
+      .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+      }
+
+      /* Tarjeta de producto */
+      .producto-card {
+        background: #fffaf5; /* fondo crema claro */
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .producto-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .producto-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #f3e1d2; /* color de respaldo si no hay imagen */
+      }
+
+      .producto-info {
+        padding: 20px 15px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .producto-info h3 {
+        margin: 0 0 8px;
+        font-size: 1.4rem;
+        color: #4a3723;
+      }
+
+      .producto-info p {
+        font-size: 0.95rem;
+        color: #6b5b4f;
+        margin: 0 0 15px;
+        line-height: 1.4;
+      }
+
+      .precio {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #b5651d; /* dorado tostado */
+        margin-bottom: 15px;
+      }
+
+      .btn-agregar {
+        background: #d49a6a;
+        color: white;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-agregar:hover {
+        background: #b87c4b;
+      }
+
+      /* Ajustes para pantallas pequeñas */
+      @media (max-width: 600px) {
+        .productos .titulo-seccion {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Menu de navegacion -->
+    <!-- Menu de navegacion (EXACTAMENTE IGUAL a tu código original) -->
     <header>
       <nav class="menu">
         <div class="container-menu">
-          <h1 class="titulo">LEIDA<span><span class="barra" >|</span>CAKE</span></h1>
+          <h1 class="titulo">LEIDA<span><span class="barra">|</span>CAKE</span></h1>
           <!-- Boton para menu toggle -->
           <button class="menu-toggle" id="mobile-menu">
             <span class="bar">=</span>
           </button>
           <!-- Lista de enlaces del menu -->
           <ul class="menu-list">
-            <li><a href="#"> Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
       </nav>
     </header>
+
+    <!-- CONTENIDO PRINCIPAL: Sección de productos -->
     <main>
-      <section class="hero">
-        <h2 class="titulo"><span>Bienvenido a</span>  LEIDA <span class="barra">|</span> <span>CAKE</span></h2>
-        <p>Descubre nuestra deliciosa selección de pasteles artesanales.</p>
+      <section class="productos">
+        <h2 class="titulo-seccion">Nuestras Tortas Artesanales</h2>
+
+        <div class="productos-grid">
+          <!-- Producto 1 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta de chocolate"
+            />
+            <div class="producto-info">
+              <h3>Torta de Chocolate</h3>
+              <p>Bizcocho húmedo de cacao con ganache belga y frutos rojos.</p>
+              <span class="precio">$28.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta Red Velvet"
+            />
+            <div class="producto-info">
+              <h3>Red Velvet</h3>
+              <p>Clásica torta aterciopelada con crema de queso y decoración floral.</p>
+              <span class="precio">$32.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta de frutilla"
+            />
+            <div class="producto-info">
+              <h3>Torta de Frutilla</h3>
+              <p>Capas de vainilla, crema diplomata y fresas frescas de temporada.</p>
+              <span class="precio">$26.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta de zanahoria"
+            />
+            <div class="producto-info">
+              <h3>Carrot Cake</h3>
+              <p>Torta de zanahoria especiada con frosting de queso crema y nueces.</p>
+              <span class="precio">$30.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+
+          <!-- Producto 5 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta de limón"
+            />
+            <div class="producto-info">
+              <h3>Lemon Pie</h3>
+              <p>Base crocante, crema de limón y merengue italiano gratinado.</p>
+              <span class="precio">$25.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+
+          <!-- Producto 6 -->
+          <div class="producto-card">
+            <img
+              src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Torta de maracuyá"
+            />
+            <div class="producto-info">
+              <h3>Maracuyá Mousse</h3>
+              <p>Mouse de maracuyá sobre bizcocho de almendras, espejo de fruta.</p>
+              <span class="precio">$29.000</span>
+              <button class="btn-agregar">Agregar al pedido</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <!-- Footer (EXACTAMENTE IGUAL) -->
     <footer>
       <p>&copy; 2024 LEIDA | CAKE. Todos los derechos reservados.</p>
+    </footer>
 
+    <!-- Tu script original del menú (no se modifica) -->
     <script src="script.js"></script>
   </body>
 </html>
